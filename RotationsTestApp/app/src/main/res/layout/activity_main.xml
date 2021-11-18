@@ -3,6 +3,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,40 +13,75 @@
             android:id="@+id/resultPitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/resultAzimuth"
+            app:layout_constraintStart_toStartOf="@+id/resultAzimuth"
             app:layout_constraintTop_toBottomOf="@+id/resultAzimuth" />
 
         <TextView
             android:id="@+id/resultRoll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/resultPitch"
+            app:layout_constraintStart_toStartOf="@+id/resultPitch"
             app:layout_constraintTop_toBottomOf="@+id/resultPitch" />
 
         <TextView
             android:id="@+id/resultAzimuth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/result"
+            app:layout_constraintStart_toStartOf="@+id/result"
             app:layout_constraintTop_toBottomOf="@+id/result" />
 
         <TextView
             android:id="@+id/result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Result:"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="Rotation Angle Result:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/accResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Accelerometer Result:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/accResultX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/accResult"
+            app:layout_constraintStart_toStartOf="@+id/accResult"
+            app:layout_constraintTop_toBottomOf="@+id/accResult" />
+
+        <TextView
+            android:id="@+id/accResultY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/accResultX"
+            app:layout_constraintStart_toStartOf="@+id/accResultX"
+            app:layout_constraintTop_toBottomOf="@+id/accResultX" />
+
+        <TextView
+            android:id="@+id/accResultZ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/accResultY"
+            app:layout_constraintStart_toStartOf="@+id/accResultY"
+            app:layout_constraintTop_toBottomOf="@+id/accResultY" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

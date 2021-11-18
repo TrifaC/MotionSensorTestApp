@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private var resultAzimuth: Double = 0.0
     private var resultPitch: Double = 0.0
     private var resultRoll: Double = 0.0
+    private var accResultX: Double = 0.0
+    private var accResultY: Double = 0.0
+    private var accResultZ: Double = 0.0
     private var result = FloatArray(3)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +56,9 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
                 }
                 Sensor.TYPE_ACCELEROMETER -> {
                     System.arraycopy(event.values, 0, accelerometerValue, 0, accelerometerValue.size)
+                    binding.accResultX.text = event.values[0].toString()
+                    binding.accResultY.text = event.values[1].toString()
+                    binding.accResultZ.text = event.values[2].toString()
                 }
             }
             SensorManager.getRotationMatrix(rotationMetricsValue, null, accelerometerValue, geoMagneticValue)
